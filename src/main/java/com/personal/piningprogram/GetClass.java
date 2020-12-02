@@ -3,16 +3,18 @@ package com.personal.piningprogram;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigInteger;
+
 @RestController
 public class GetClass {
-    public static int countOfPing = 0;
+    public static BigInteger countOfPing = new BigInteger(String.valueOf(0));
 
     public static void incCount() {
-        countOfPing ++;
+        countOfPing.add(new BigInteger(String.valueOf(1)));
     }
 
-    public static int getCount() {
-        return  countOfPing;
+    public static String getCount() {
+        return countOfPing.toString();
     }
 
     @GetMapping("/")
