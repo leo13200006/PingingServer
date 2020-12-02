@@ -7,10 +7,10 @@ import java.math.BigInteger;
 
 @RestController
 public class GetClass {
-    public static BigInteger countOfPing = new BigInteger(String.valueOf(0));
+    public static BigInteger countOfPing = BigInteger.ZERO;
 
     public static void incCount() {
-        countOfPing.add(new BigInteger(String.valueOf(1)));
+        countOfPing = countOfPing.add(BigInteger.ONE);
     }
 
     public static String getCount() {
@@ -19,8 +19,12 @@ public class GetClass {
 
     @GetMapping("/")
     public String helloWolrd() {
-        return "Hello Wolrd \n" +
-                "Ping count - " + GetClass.getCount();
+        return "Hello World This is Pinging Server";
+    }
+
+    @GetMapping("/ping")
+    public String ping() {
+        return "Ping Count - " + GetClass.getCount();
     }
 
 }
