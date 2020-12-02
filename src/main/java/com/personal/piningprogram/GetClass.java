@@ -18,7 +18,7 @@ public class GetClass {
     }
 
     @GetMapping("/")
-    public String helloWolrd() {
+    public String helloWorld() {
         return "Hello World This is Pinging Server";
     }
 
